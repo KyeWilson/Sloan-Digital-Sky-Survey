@@ -70,13 +70,12 @@ Navigate to the respective Q1, Q2, and Q3 folders to explore the notebooks.
 
 ## Dependencies
 All Python libraries required to run the notebooks are listed in `dependencies.txt`:
-`Python 3.8+`
-`TensorFlow 2.9.0`
-`Scikit-learn 1.1.1`
-`Matplotlib 3.5.2`
-`Pandas 1.4.3`
-`NumPy 1.22.4`
-`Seaborn 0.11.2`
+- `pandas==2.2.3`
+- `numpy==1.26.4`
+- `matplotlib==3.8.3`
+- `seaborn==0.13.2`
+- `scikit-learn==1.3.2`
+- `tensorflow==2.16.1`
 To ensure compatibility, install the specified versions of the libraries.
 
 ## Motivation
