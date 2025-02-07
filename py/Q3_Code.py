@@ -58,7 +58,7 @@ print(results_df)
 
 # Plot results
 plt.figure(figsize=(8, 5))
-sns.barplot(x=results_df.index, y=results_df['Accuracy'], palette="viridis")
+sns.barplot(x=results_df.index, y=results_df['Accuracy'], hue=results_df.index, palette="viridis", legend=False)
 plt.title("Neural Network Accuracy by Activation Function")
 plt.ylabel("Accuracy")
 plt.xlabel("Activation Function")
@@ -66,7 +66,7 @@ plt.ylim(0, 1)
 plt.show()
 
 plt.figure(figsize=(8, 5))
-sns.barplot(x=results_df.index, y=results_df['Loss'], palette="magma")
+sns.barplot(x=results_df.index, y=results_df['Loss'], hue=results_df.index, palette="magma", legend=False)
 plt.title("Neural Network Loss by Activation Function")
 plt.ylabel("Loss")
 plt.xlabel("Activation Function")
