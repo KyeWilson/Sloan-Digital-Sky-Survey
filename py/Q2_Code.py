@@ -49,9 +49,11 @@ y_pred = model.predict(X_test)
 y_pred_classes = np.argmax(y_pred, axis=1)  # Convert probabilities to class labels
 y_test_classes = np.argmax(y_test, axis=1)  # Convert one-hot encoded labels to class labels
 
-# Print classification report
-print("Classification Report:")
-print(classification_report(y_test_classes, y_pred_classes))
+# Evaluate model using the function from functions.py
+accuracy, report, conf_matrix = evaluate_model(model, X_test, y_test)
+
+print(f"Neural Network Accuracy: {accuracy:.2f}")
+print("Classification Report:\n", report)
 
 # Plot confusion matrix
 plot_confusion_matrix(y_test_classes, y_pred_classes, class_names=['Galaxy', 'Star', 'Quasar'])
