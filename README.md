@@ -76,6 +76,7 @@ All Python libraries required to run the notebooks are listed in `dependencies.t
 - `seaborn==0.13.2`
 - `scikit-learn==1.3.2`
 - `tensorflow==2.16.1`
+
 To ensure compatibility, install the specified versions of the libraries.
 
 ## Motivation
