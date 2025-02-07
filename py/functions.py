@@ -74,11 +74,25 @@ def compile_and_train_model(model, X_train, y_train, X_test, y_test, learning_ra
     history = model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=epochs, batch_size=batch_size, verbose=1)
     return history
 
-
-# Evaluate a model
+# Evaluate Model
 def evaluate_model(model, X_test, y_test):
-    test_loss, test_accuracy = model.evaluate(X_test, y_test, verbose=0)
-    return test_accuracy, test_loss
+    # Check if the model is a TensorFlow model
+    if hasattr(model, 'evaluate'):
+        # TensorFlow model evaluation
+        test_loss, test_accuracy = model.evaluate(X_test, y_test, verbose=0)
+        return test_accuracy, test_loss, None  # No confusion matrix for TensorFlow models
+    
+    # If it's not a TensorFlow model, assume scikit-learn
+    elif hasattr(model, 'predict'):
+        # Scikit-learn model evaluation
+        y_pred = model.predict(X_test)
+        accuracy = accuracy_score(y_test, y_pred)
+        report = classification_report(y_test, y_pred, target_names=['Galaxy', 'Star', 'Quasar'])
+        conf_matrix = confusion_matrix(y_test, y_pred)
+        return accuracy, report, conf_matrix
+    
+    else:
+        raise ValueError("Model type not supported!")
 
 
 # Plot confusion matrix
