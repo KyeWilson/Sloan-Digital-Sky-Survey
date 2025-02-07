@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Import functions from functions.py
-from py.functions import (
+from functions import (
     load_and_preprocess_data, split_data, standardize_features,
     one_hot_encode_labels, build_neural_network, compile_and_train_model,
     evaluate_model, plot_confusion_matrix
