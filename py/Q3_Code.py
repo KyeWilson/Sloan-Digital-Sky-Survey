@@ -49,7 +49,7 @@ def test_activation_function(activation_function):
 # Test multiple activation functions
 results = {}
 for activation in ['relu', 'sigmoid', 'tanh']:
-    accuracy, loss = test_activation_function(activation)
+    accuracy, loss, _ = test_activation_function(activation)
     results[activation] = {'Accuracy': accuracy, 'Loss': loss}
 
 # Convert results to a DataFrame for easy visualization
