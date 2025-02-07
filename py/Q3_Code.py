@@ -39,7 +39,7 @@ def test_activation_function(activation_function):
     compile_and_train_model(model, X_train, y_train, X_test, y_test)
     
     # Evaluate the model
-    test_accuracy, test_loss = evaluate_model(model, X_test, y_test)
+    test_accuracy, test_loss, _ = evaluate_model(model, X_test, y_test)
     
     print(f"Test Accuracy: {test_accuracy:.2f}")
     print(f"Test Loss: {test_loss:.4f}")
